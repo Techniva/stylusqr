@@ -134,6 +134,19 @@ export interface TextQRData extends QRDataBase {
   };
 }
 
+export interface businesscard extends QRDataBase {
+  type: 'businesscard';
+  data: {
+    name: string;
+    phone?: string;
+    email?: string;
+    company?: string;
+    title?: string;
+    address?: string;
+    website?: string;
+  };
+}
+
 export type QRData = 
   | WebsiteQRData 
   | EmailQRData 
@@ -148,7 +161,8 @@ export type QRData =
   | LinkedInQRData 
   | TwitterQRData 
   | FacebookQRData 
-  | TextQRData;
+  | TextQRData
+  | businesscard;
 
 // QR Code Type Configurations
 export const QR_TYPE_CONFIGS = {
